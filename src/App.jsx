@@ -1,34 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import * as S from './styledComponents'
+import * as I from "iconoir-react"
+import hero from '../public/hero.png'
+import { useState } from 'react'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <S.Body>
+      <S.Header>
+        <S.Title><I.Code /> artur medeiros</S.Title>
+        <S.Nav>
+          <S.NavItem>home</S.NavItem>
+          <S.NavItem>about me</S.NavItem>
+          <S.NavItem>portfolio</S.NavItem>
+          <S.NavItem>contact</S.NavItem>
+        </S.Nav>
+      </S.Header>
+      <S.Section>
+        <S.SectionColumn>
+          <S.SectionTitle>
+            web developer & designer <br />
+            // ui/ux focused
+          </S.SectionTitle>
+          <S.Button>get to know me!</S.Button>
+          <S.Redes>
+            <S.NavItem href="https://github.com/arthurzop" target="_blank">
+              <I.Github />
+            </S.NavItem>
+            <S.NavItem href="https://instagram.com/arthurzop" target="_blank">
+              <I.Instagram />
+            </S.NavItem>
+            <S.NavItem href="#">
+              <I.Linkedin />
+            </S.NavItem>
+          </S.Redes>
+        </S.SectionColumn>
+        <S.SectionColumn>
+          <S.Image src={hero}></S.Image>
+        </S.SectionColumn>
+      </S.Section>
+      <S.Section>
+      </S.Section>
+    </S.Body>
   )
 }
 
